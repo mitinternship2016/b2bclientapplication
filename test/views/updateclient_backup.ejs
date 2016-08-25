@@ -1,0 +1,126 @@
+<html ng-app="postExample">
+<title>Update Client</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>  
+<script src="/public/javascripts/usersController.js"></script>
+<script src="/public/javascripts/userRepoService.js"></script>
+<script src="/public/javascripts/userRepoService2.js"></script>
+<script src="/public/javascripts/userRepoService3.js"></script>
+<script src="/public/javascripts/userRepoService4.js"></script>
+<script src="/public/javascripts/userRepoService5.js"></script>
+<script src="/public/javascripts/userRepoService6.js"></script>
+<script src="/public/javascripts/userRepoService7.js"></script>
+<script src="/public/javascripts/userRepoService8.js"></script>
+<body body ng-app style="text-align:center;" ng-controller="UsersController">
+<h1>Update Client</h1>
+<form method="POST" action="/admin/updateclient">
+<br>
+<br>
+<table style="width:100%; margin:1em">
+<tr>
+<td>
+</td>
+<td>
+Client/Account Name:    
+    <select name="name" id="UserSelector" style="width: 100%;" required>
+    <option value=""></option>
+      <option ng-repeat="user in users" value="{{user.name}}">{{user.name}}</option>
+    </select> 
+   </td>
+    <td>
+		    <input type="radio" name="active" value="active" checked>Active
+		    <input type="radio" name="active" value="inactive">Inactive
+		    <br>
+		    <br>
+	    </td>
+	 </tr>
+	 <tr>
+	 <td/>
+	 <td>
+	<font color="red">Hosting Type:</font>  
+	<input type="radio" name="hostingtype" value="onpremise" required="">On-Prem
+	<input type="radio" name="hostingtype" value="saas" required=""> SaaS
+	<br>
+	<br>
+	</td>
+	</tr>
+	<tr>
+		<td>Industry:  <br></td>
+		<td><select name="industry" style="width: 100%;">
+		<option value=""></option>
+      <option ng-repeat="industry in industries" value="{{industry.name}}">{{industry.name}}</option>
+    </select><br></td>
+		<td><font color="red">Back-end System:  </font><br></td>
+		<td><select name="backend" required>
+		<option value=""></option>
+      <option ng-repeat="backend in backends" value="{{backend.name}}">{{backend.name}}</option>
+    </select><br></td>
+	</tr>
+	<tr>
+		<td>Geography/IOT/GMU:  <br></td>
+		<td><select name="geography">
+		<option value=""></option>
+      <option ng-repeat="geography in geographies" value="{{geography.name}}">{{geography.name}}</option>
+    </select><br></td>
+	</tr>
+	<tr>
+		<td>Region/IMT/GMT:  <br></td>
+		<td><select name="region">
+		<option value=""></option>
+      <option ng-repeat="region in regions" value="{{region.name}}">{{region.name}}</option>
+    </select><br></td>
+		<td><font color="red">EDI Standards Used:  </font><br></td>
+		<td><select name="edi" required>
+		<option value=""></option>
+      <option ng-repeat="edi in edis" value="{{edi.name}}">{{edi.name}}</option>
+    </select><br></td>
+	</tr>
+	<tr>
+		<td><font color="red">Location:  </font><br></td>
+		<td><input name="location" size=30 required style="text-transform : uppercase;"><br></td>
+		<td>URL for Solution Manual:  <br></td>
+		<td><input name="solution" size=30><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><br></td>
+		<td>Link in RTC (if available)  <br></td>
+		<td><input name="rtc" size=30><br></td>
+	</tr>
+	<tr>
+    <td>
+    Lifecycle of the Client:
+    </td>
+    <td>
+    <input type="radio" name="lifecycle" value="implementation">Implementation
+    <br>
+    <input type="radio" name="lifecycle" value="migration">Migration
+    <br>
+    From<input name="fromdate" type="date" />
+    To<input name="todate" type="date" />
+    <br>
+    <input type="radio" name="lifecycle" value="product enhancement/support">Product Enhancement/Support
+    </td>
+    <td>Third Party systems involved  </td>
+    <td><select name="thirdparty">
+    <option value=""></option>
+      <option ng-repeat="thirdparty in thirdparties" value="{{thirdparty.name}}">{{thirdparty.name}}</option>
+    </select><br></td>
+	</tr>
+	<tr>
+    <td>
+    ICN #:
+    </td>
+    <td>
+    <input name="icn" type="text" name="icn" size="20">
+    </td>
+    </tr>
+</table>
+<button  type="submit" ng-click="submit()">Update</button>
+</form>
+<button type="button" onclick="location.href = '/admin/updateclient';">Reset</button>
+<br>
+<br>
+<button type="button" onclick="location.href = '/admin';">Back</button>
+
+</body>
+</html>

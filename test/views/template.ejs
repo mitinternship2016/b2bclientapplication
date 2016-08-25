@@ -1,0 +1,52 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<table style="width=10%"> 
+<tr>
+<th>Client/ Account Name</th>
+<th>Active</th>
+<th>ICN #</th>
+<th>Hosting Type</th>
+<th>Industry</th>
+<th>Backend</th>
+<th>Geography/ IOT/ GMU</th>
+<th>Region/ IMT/ GMT</th>
+<th>Location</th>
+<th>EDI Standards Used</th>
+<th>Lifecycle of the client</th>
+<th>From</th>
+<th>To</th>
+<th>Link to Solution Manual</th>
+<th>Link in RTC</th>
+<th>Third Party Systems Involved</th>
+</tr>
+<% for(var i=0;i<info.length;i++) { %>
+<tr>
+<td><%=info[i].name%></td>
+<td><%=info[i].active%></td>
+<td><%=info[i].icn%></td>
+<td><%=info[i].hostingtype%></td>
+<td><%=info[i].industry%></td>
+<td><%=info[i].backend%></td>
+<td><%=info[i].geography%></td>
+<td><%=info[i].region%></td>
+<td><%=info[i].location%></td>
+<td><%=info[i].edi%></td>
+<td><%=info[i].lifecycle%></td>
+<td><%=info[i].fromdate%></td>
+<td><%=info[i].todate%></td>
+<td><%=info[i].solution%></td>
+<td><%=info[i].rtc%></td>
+<td><%=info[i].thirdparty%></td>
+</tr>
+<% } %>
+</table>
+</body>
+</html>

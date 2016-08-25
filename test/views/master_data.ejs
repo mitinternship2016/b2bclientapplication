@@ -1,0 +1,102 @@
+<html ng-app="postExample">
+<title>Master Data</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>  
+<script src="/public/javascripts/usersController.js"></script>
+<script src="/public/javascripts/userRepoService.js"></script>
+<script src="/public/javascripts/userRepoService2.js"></script>
+<script src="/public/javascripts/userRepoService3.js"></script>
+<script src="/public/javascripts/userRepoService4.js"></script>
+<script src="/public/javascripts/userRepoService5.js"></script>
+<script src="/public/javascripts/userRepoService6.js"></script>
+<script src="/public/javascripts/userRepoService7.js"></script>
+<body body ng-app style="text-align:center;" ng-controller="UsersController">
+<h1>Master Data</h1>
+<form method="POST" action="/admin/masterdata">
+Geography/IOT/GMU:
+<select name="geography">
+<option value=""></option>
+      <option ng-repeat="geography in geographies" value="{{geography.name}}">{{geography.name}}</option>
+    </select>
+<br>
+<br>
+<input type="text" name="newgeography" size="20">
+<br>
+<br>
+<input type="submit" name="submit" value="Add Geography">
+<input type="submit" name="submit" value="Delete Geography">
+<br>
+<br>
+Industry:
+<select name="industry">
+<option value=""></option>
+      <option ng-repeat="industry in industries" value="{{industry.name}}">{{industry.name}}</option>
+    </select>
+<br>
+<br>
+<input type="text" name="newindustry" size="20">
+<br>
+<br>
+<input type="submit" name="submit" value="Add Industry">
+<input type="submit" name="submit" value="Delete Industry">
+<br>
+<br>
+EDI standards:
+<select name="edi">
+<option value=""></option>
+      <option ng-repeat="edi in edis" value="{{edi.name}}">{{edi.name}}</option>
+    </select>
+<br>
+<br>
+<input type="text" name="newedi" size="20">
+<br>
+<br>
+<input type="submit" name="submit" value="Add EDI">
+<input type="submit" name="submit" value="Delete EDI">
+<br>
+<br>
+Backend:
+<select name="backend">
+<option value=""></option>
+      <option ng-repeat="backend in backends" value="{{backend.name}}">{{backend.name}}</option>
+    </select>
+<br>
+<br>
+<input type="text" name="newbackend" size="20">
+<br>
+<br>
+<input type="submit" name="submit" value="Add Backend">
+<input type="submit" name="submit" value="Delete Backend">
+<br>
+<br>
+Region:
+<select name="region">
+<option value=""></option>
+      <option ng-repeat="region in regions" value="{{region.name}}">{{region.name}}</option>
+    </select>
+<br>
+<br>
+<input type="text" name="newregion" size="20">
+<br>
+<br>
+<input type="submit" name="submit" value="Add Region">
+<input type="submit" name="submit" value="Delete Region">
+<br>
+<br>
+Third Party:
+<select name="thirdparty">
+<option value=""></option>
+      <option ng-repeat="thirdparty in thirdparties" value="{{thirdparty.name}}">{{thirdparty.name}}</option>
+    </select>
+<br>
+<br>
+<input type="text" name="newthirdparty" size="20">
+<br>
+<br>
+<input type="submit" name="submit" value="Add Third Party">
+<input type="submit" name="submit" value="Delete Third Party">
+<br>
+<br>
+</form>
+<button type="button" onclick="location.href = '/admin';">Back</button>
+</body>
+</html>
